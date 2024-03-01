@@ -1,48 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
 // React Element is an abject but when it renders into the DOM then it beacomes a HTML elements
 
 // const parent = React.createElement("h1", { id: "heading" }, "Inside from the React");  // CORE REACT WILL CREATE THIS ELEMENT
 
 // const parentJSX = <h1 id="heading">PARENT JSX</h1>;
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://seeklogo.com/images/F/foodx-online-food-ordering-system-logo-145CB16578-seeklogo.com.png" alt="logo" />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const RestaurantCard = () => {
-    return (
-        <div className="res-card">
-            <h3>Meghna Foods</h3>
-        </div>
-    )
-}
-
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-                <RestaurantCard />
-            </div>
-        </div>
-    )
-}
 
 const AppLayout = () => {
     return (
