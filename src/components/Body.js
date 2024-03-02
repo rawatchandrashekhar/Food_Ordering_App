@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import RestaurantCard from "./RestaurantCard"
+import { API } from "../api/APIs";
 
 const Body = () => {
 
@@ -8,10 +9,9 @@ const Body = () => {
     useEffect(() => {
         ; (async () => {
             try {
-                const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2124&lng=78.1772&page_type=DESKTOP_WEB_LISTING");
+                const response = await fetch(API.DESKTOP_WEB_LISTING);
                 const result = await response.json();
-                console.log(result);
-                setResData(result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+                setResData(result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             } catch (error) {
                 console.log(error.message);
             }
