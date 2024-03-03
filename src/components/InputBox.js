@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function InputBox({ placeholder, onChange }) {
+export default function InputBox({ placeholder, onChange, value }) {
 
     const [focus, setFocus] = useState(false);
 
@@ -13,12 +13,13 @@ export default function InputBox({ placeholder, onChange }) {
             <div className='inputbox-img-container'>
                 <img src={require("../utils/images/search.png")} className='inputbox-image' />
             </div>
-            <input type='text' minLength='3' placeholder={placeholder} onChange={(e) => handleChange(e)} onFocus={() => setFocus(true)} onBlur={() => setFocus(false)} className='input-style' />
+            <input type='text' minLength='3' placeholder={placeholder} value={value} onChange={(e) => handleChange(e)} onFocus={() => setFocus(true)} onBlur={() => setFocus(false)} className='input-style' />
         </div>
     )
 }
 
 InputBox.defaultProps = {
     placeholder: "ADD PLACEHOLDER",
-    onChange: () => { }
+    onChange: () => { },
+    value: ""
 }

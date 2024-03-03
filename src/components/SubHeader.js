@@ -3,12 +3,15 @@ import InputBox from './InputBox'
 
 export default function SubHeader(props) {
 
-    const { resData, setResData } = props;
+    const { resData, setResData, resTempData } = props;
 
     const [mouseEnter, setMouseEnter] = useState(false);
+    const [searchText, setSearchText] = useState("");
 
     const handleSearchInput = (txt) => {
-        console.log(txt);
+        setSearchText(txt);
+        const filteredRes = resTempData.filter(item => item.info.name.toLowerCase().includes(txt.toLowerCase()));
+        setResData(filteredRes);
     }
 
     const handleFilter = () => {
@@ -19,7 +22,7 @@ export default function SubHeader(props) {
     return (
         <div className='dashboard-search-container'>
             <div className='dashboard-input-container'>
-                <InputBox placeholder={'Search'} onChange={(txt) => handleSearchInput(txt)} />
+                <InputBox placeholder={'Search'} value={searchText} onChange={(txt) => handleSearchInput(txt)} />
             </div>
             <div className='dashboard-button-container'>
                 <button onMouseEnter={() => setMouseEnter(true)} onMouseLeave={() => setMouseEnter(false)}

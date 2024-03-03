@@ -8,6 +8,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
 
     const [resData, setResData] = useState([]);
+    const [resTempData,setResTempData]=useState([]);
 
     useEffect(() => {
         ; (async () => {
@@ -16,6 +17,7 @@ const Body = () => {
                 const result = await response.json();
                 //Optional Chaining
                 setResData((result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants) || restaurantData);
+                setResTempData((result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants) || restaurantData);
             } catch (error) {
                 console.log(error.message);
                 alert(error.message);
@@ -26,11 +28,11 @@ const Body = () => {
     return (
         <div className="body">
             <div className="sub-header">
-                <SubHeader resData={resData} setResData={setResData} />
+                <SubHeader resData={resData} setResData={setResData} resTempData={resTempData} />
             </div>
             <div className="res-container">
                 {resData.length === 0 ? <Shimmer /> :
-                    resData?.map((item) => <RestaurantCard key={item?.info?.id} resData={item} />)}
+                    resData?.map((item) => <RestaurantCard key={item.info.id} resData={item} />)}
             </div>
         </div>
     )
