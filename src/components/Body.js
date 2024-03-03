@@ -14,6 +14,7 @@ const Body = () => {
                 setResData(result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             } catch (error) {
                 console.log(error.message);
+                alert(error.message);
             }
         })()
     }, [])
