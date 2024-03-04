@@ -1,6 +1,8 @@
+import { NavLink } from "react-router-dom"
 import { LOGO_URL } from "../utils/constants"
 
 const Header = () => {
+
     return (
         <div className="header">
             <div className="logo-container">
@@ -8,10 +10,26 @@ const Header = () => {
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Cart</li>
+                    <li><NavLink to={'/'} className={({ isActive }) =>
+                        isActive
+                            ? "header-li-element-active"
+                            : "header-li-element"
+                    }>Home</NavLink></li>
+                    <li><NavLink to={'/about'} className={({ isActive }) =>
+                        isActive
+                            ? "header-li-element-active"
+                            : "header-li-element"
+                    }>About us</NavLink></li>
+                    <li><NavLink to={'/contact'} className={({ isActive }) =>
+                        isActive
+                            ? "header-li-element-active"
+                            : "header-li-element"
+                    }>Contact us</NavLink></li>
+                    <li><NavLink to={'/cart'} className={({ isActive }) =>
+                        isActive
+                            ? "header-li-element-active"
+                            : "header-li-element"
+                    }>Cart</NavLink></li>
                 </ul>
             </div>
         </div>

@@ -168,7 +168,7 @@ body {
     border: none;
 }
 
-.shimmer-container{
+.shimmer-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,4 +181,27 @@ body {
     background-color: #f0f0f0;
     border-radius: 15px;
     margin: 10px;
+}
+
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.error-image {
+    width: 600px;
+}
+
+.header-li-element {
+    text-decoration-line: none;
+    color: #000;
+}
+
+.header-li-element-active {
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
+    color: #E01226;
 }
