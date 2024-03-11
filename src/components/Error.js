@@ -3,12 +3,12 @@ import { IMAGES } from "../utils/constants";
 
 export default function Error() {
 
-    const { status, statusText } = useRouteError();
+    const { status, statusText, message } = useRouteError();
 
     return (
         <div className="error-container">
-            <img src={IMAGES.error} className="error-image" />
-            <h1>{status}: {statusText}!</h1>
+            <img src={IMAGES.notFound} className="error-image" />
+            <h1>({status}) {statusText || message}</h1>
         </div>
     )
 }

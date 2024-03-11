@@ -7,6 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import Error from "./components/Error";
+import RestaurantDetail from "./components/RestaurantDetail";
 
 // React Element is an abject but when it renders into the DOM then it beacomes a HTML elements
 
@@ -44,6 +45,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart />
+            },
+            {
+                path: "/restaurant/:resID",
+                element: <RestaurantDetail />
             }
         ]
     }

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react"
 import RestaurantCard from "./RestaurantCard"
-import { API } from "../api/APIs";
+import { API } from "../utils/constants";
 import { restaurantData } from "../utils/mockData";
 import SubHeader from "./SubHeader";
 import Shimmer from "./Shimmer";
+import TestingCompo from "../TestingCompo";
 
 const Body = () => {
 
     const [resData, setResData] = useState([]);
-    const [resTempData,setResTempData]=useState([]);
+    const [resTempData, setResTempData] = useState([]);
 
     useEffect(() => {
         ; (async () => {
@@ -27,6 +28,7 @@ const Body = () => {
 
     return (
         <div className="body">
+            <TestingCompo />
             <div className="sub-header">
                 <SubHeader resData={resData} setResData={setResData} resTempData={resTempData} />
             </div>
