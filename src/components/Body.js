@@ -28,7 +28,7 @@ const Body = () => {
 
     return (
         <div className="body">
-            <TestingCompo />
+            {/* <TestingCompo /> */}
             <div className="sub-header">
                 <SubHeader resData={resData} setResData={setResData} resTempData={resTempData} />
             </div>
